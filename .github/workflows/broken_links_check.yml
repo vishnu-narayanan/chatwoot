@@ -8,6 +8,9 @@ on:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
 
+inputs:
+  TARGET: "https://www.chatwoot.com/help-center"
+
 name: Broken Link Check
 jobs:
   check:

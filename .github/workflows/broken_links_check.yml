@@ -4,11 +4,6 @@ on:
   repository_dispatch:
     types: [check-link]
   workflow_dispatch:
-    inputs:
-      TARGET: 
-        default: 'https://www.chatwoot.com/help-center'
-        required: true
-
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -22,3 +17,5 @@ jobs:
     steps:
       - name: Broken Link Check
         uses: technote-space/broken-link-checker-action@gh-actions
+        with:
+          TARGET: "https://www.chatwoot.com/help-center"

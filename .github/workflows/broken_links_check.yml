@@ -4,12 +4,14 @@ on:
   repository_dispatch:
     types: [check-link]
   workflow_dispatch:
+    inputs:
+      TARGET: 
+        default: 'https://www.chatwoot.com/help-center'
+        required: true
+
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-
-inputs:
-  TARGET: "https://www.chatwoot.com/help-center"
 
 name: Broken Link Check
 jobs:
